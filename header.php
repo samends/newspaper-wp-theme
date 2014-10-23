@@ -13,9 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="wp-content/themes/daily-campus/platform/platform.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo $current_url.'/stylesheets/screen.css'?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo $current_url.'/css/bootstrap.css'?>">
     <link rel="import" href="wp-content/themes/daily-campus/components/paper-tabs/paper-tabs.html">
-    <link rel="import" href="wp-content/themes/daily-campus/components/paper-shadow/paper-shadow.html">
 
     <!-- media-queries.js (fallback) -->
     <!--[if lt IE 9]>
@@ -42,9 +40,15 @@
         <div class="row">
             <div class="blue-row col-md-12"></div>
         </div>
-        <nav class="navbar navbar-default" role="navigation">
+        <nav class="paper-shadow-bottom-z-1 navbar navbar-default" role="navigation">
           <div class="container-header container-fluid">
-
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+        </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="header-navbar-collapse collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -60,9 +64,15 @@
               <ul class="nav navbar-nav navbar-mobile">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#">Technology</a></li>
-                <li class="active"><a href="#">Sports</a></li>
+                <li class=""><a href="#">Sports</a></li>
                 <li><a href="#">Arts</a></li>
-                <li class="active"><a href="#">Local Business</a></li>
+                <li class=""><a href="#">Local Business</a></li>
+                <li class=""><form class="navbar-form navbar-left" role="search">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </form></li>
               </ul>
               <form class="header-search navbar-form navbar-left" role="search">
                 <div class="form-group">
