@@ -1,5 +1,5 @@
 <?php /*
-	Template Name:Cover Page
+  Template Name:Category-Sports
 */
 
 ?>
@@ -8,7 +8,6 @@
 $current_url=get_stylesheet_directory_uri();
 $start=true;
 $counter=0;
-
 ?>
 <head>
 <?php get_header(); ?>
@@ -17,8 +16,9 @@ $counter=0;
     <div class="article-row-container row">
         <div class="col-md-1 article-buffer"></div>
         <div class="col-md-9 article-container">
-            <?php if ( have_posts() ) : ?>
-                <?php while ( have_posts() ) : the_post();?>
+        <?php $sports_query = new WP_Query( array( 'posts_per_page' => '10', 'category_name' => 'sports', 'orderby' => 'date') ); ?>
+        <?php if ( $sports_query->have_posts() ) : ?>
+            <?php while ( $sports_query->have_posts() ) : $sports_query->the_post(); ?>
                   <?php if(($counter%3)==0){
                             if($start==true){
                               ?><div class="article-row row"><?php

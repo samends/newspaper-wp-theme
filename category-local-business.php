@@ -1,5 +1,5 @@
 <?php /*
-	Template Name:Cover Page
+  Template Name:Category-Local-Business
 */
 
 ?>
@@ -8,7 +8,6 @@
 $current_url=get_stylesheet_directory_uri();
 $start=true;
 $counter=0;
-
 ?>
 <head>
 <?php get_header(); ?>
@@ -17,8 +16,9 @@ $counter=0;
     <div class="article-row-container row">
         <div class="col-md-1 article-buffer"></div>
         <div class="col-md-9 article-container">
-            <?php if ( have_posts() ) : ?>
-                <?php while ( have_posts() ) : the_post();?>
+        <?php $local_business_query = new WP_Query( array( 'posts_per_page' => '10', 'category_name' => 'local-business', 'orderby' => 'date') ); ?>
+        <?php if ( $local_business_query->have_posts() ) : ?>
+            <?php while ( $local_business_query->have_posts() ) : $local_business_query->the_post(); ?>
                   <?php if(($counter%3)==0){
                             if($start==true){
                               ?><div class="article-row row"><?php

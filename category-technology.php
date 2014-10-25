@@ -1,5 +1,5 @@
 <?php /*
-	Template Name:Cover Page
+  Template Name:Category-Technology
 */
 
 ?>
@@ -8,7 +8,6 @@
 $current_url=get_stylesheet_directory_uri();
 $start=true;
 $counter=0;
-
 ?>
 <head>
 <?php get_header(); ?>
@@ -17,8 +16,9 @@ $counter=0;
     <div class="article-row-container row">
         <div class="col-md-1 article-buffer"></div>
         <div class="col-md-9 article-container">
-            <?php if ( have_posts() ) : ?>
-                <?php while ( have_posts() ) : the_post();?>
+        <?php $technology_query = new WP_Query( array( 'posts_per_page' => '10', 'category_name' => 'technology', 'orderby' => 'date') ); ?>
+        <?php if ( $technology_query->have_posts() ) : ?>
+            <?php while ( $technology_query->have_posts() ) : $technology_query->the_post(); ?>
                   <?php if(($counter%3)==0){
                             if($start==true){
                               ?><div class="article-row row"><?php
@@ -50,5 +50,15 @@ $counter=0;
           <?php get_sidebar(); ?>
       </div>
     </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    console.log("I'm working");
+    $(".home").removeClass('core-selected');
+    $(".technology").addClass('core-selected');
+    var one=1;
+    $("paper-tabs").attr('1',one);
+  });
+</script>
 </body>
 <?php get_footer(); ?>

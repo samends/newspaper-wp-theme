@@ -5,7 +5,8 @@
 <!--[if IE 7 ]>    <html <?php language_attributes(); ?> class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html <?php language_attributes(); ?> class="no-js ie8"> <![endif]-->
 <!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
-<?php $current_url=get_stylesheet_directory_uri(); ?>
+<?php $current_url=get_stylesheet_directory_uri();?>
+<?php $site_url=site_url();?>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -35,7 +36,7 @@
 
     <header role="banner">
         <div class="row">
-            <img class="DC-logo col-xs-6 col-sm-6 col-md-4" src="wp-content/themes/daily-campus/img/TDC-Logo.jpeg" alt="DC-icon">
+            <a href="<?php echo site_url(); ?>"><img class="DC-logo col-xs-6 col-sm-6 col-md-4" src="<?php echo $current_url; ?>/img/TDC-Logo.jpeg" alt="DC-icon"></a>
         </div>
         <div class="row">
             <div class="blue-row col-md-12"></div>
@@ -51,15 +52,21 @@
         </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="header-navbar-collapse collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="header-navbar-collapse collapse navbar-collapse dc-navbar" id="bs-example-navbar-collapse-1">
               <span class="navbar-desktop">
-                <paper-tabs selected="0" class="nav navbar-nav">
-                  <paper-tab><a href="#">Home</a></paper-tab>
-                  <paper-tab><a href="#">Technology</a></paper-tab>
-                  <paper-tab><a href="#">Sports</a></paper-tab>
-                  <paper-tab><a href="#">Arts</a></paper-tab>
-                  <paper-tab><a href="#">Local Business</a></paper-tab>
-                </paper-tabs>
+                <ul nobar="true" selected="0" class="nav navbar-nav">
+                  <li  class="home"><a  href="<?php echo site_url(); ?>">Home</a></li>
+                  <li class="technology"><a href="<?php echo $site_url.'/technology';?>">Technology</a></li>
+                  <li class="sports"><a href="<?php echo $site_url.'/sports';?>">Sports</a></li>
+                  <li class="arts"><a href="<?php echo $site_url.'/arts';?>">Arts</a></li>
+                  <li class="local-business"><a href="<?php echo $site_url.'/local-business';?>">Local Business</a></li>
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                            <li><a href="<?php echo $site_url.'/advertising-information/';?>">Advertising Information</a></li>
+                            <li><a href="<?php echo $site_url.'/contact-us';?>">Contact Us</a></li>
+                      </ul>
+                  </li>
               </span>
               <ul class="nav navbar-nav navbar-mobile">
                 <li class="active"><a href="#">Home</a></li>
