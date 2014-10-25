@@ -19,20 +19,7 @@ $counter=0;
         <div class="col-md-9 article-container">
             <?php if ( have_posts() ) : ?>
                 <?php while ( have_posts() ) : the_post();?>
-                  <?php if(($counter%3)==0){
-                            if($start==true){
-                              ?><div class="article-row row"><?php
-                            }
-                            /*If start equals false*/
-                            else{
-                              ?></div><div class="article-row row"><?php
-                            }
-                        }
-                        /*If counter is odd do nothing*/
-                        else{
-                          ?><?php
-                        }
-                        ?>
+
                       <?php get_template_part('content','articles'); ?>
                       <?php $counter++;
                             $start=false;?>
@@ -45,10 +32,10 @@ $counter=0;
                 </div>
             <?php endif; ?>
         <!--End of article container -->
-      </div>
       <div class="col-md-2 dc-sidebar">
           <?php get_sidebar(); ?>
       </div>
     </div>
+    <?php posts_nav_link();?>
 </body>
 <?php get_footer(); ?>
