@@ -1,4 +1,4 @@
-<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 article-stub">
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 article-stub">
       <?php
       /*Gets color for top of article */
         foreach(get_the_category() as $category){

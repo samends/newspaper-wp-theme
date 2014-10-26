@@ -67,6 +67,7 @@
                             <li><a href="<?php echo $site_url.'/contact-us';?>">Contact Us</a></li>
                       </ul>
                   </li>
+                </ul>
               </span>
               <ul class="nav navbar-nav navbar-mobile">
                 <li class="active"><a href="#">Home</a></li>
@@ -74,19 +75,16 @@
                 <li class=""><a href="#">Sports</a></li>
                 <li><a href="#">Arts</a></li>
                 <li class=""><a href="#">Local Business</a></li>
-                <li class=""><form class="navbar-form navbar-left" role="search">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                  </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
-                </form></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                          <li><a href="<?php echo $site_url.'/advertising-information/';?>">Advertising Information</a></li>
+                          <li><a href="<?php echo $site_url.'/contact-us';?>">Contact Us</a></li>
+                    </ul>
+                </li>
               </ul>
-              <form class="header-search navbar-form navbar-left" role="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-              </form>
+              <a href="https://www.facebook.com/thedailycampus"><img src="<?php echo $current_url; ?>/img/facebook-icon.png" class="social-media-icons facebook-icon"></a>
+              <a href="https://twitter.com/the_dailycampus"><img src="<?php echo $current_url; ?>/img/twitter-icon.png" class="social-media-icons twitter-icon"></a>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>

@@ -16,7 +16,7 @@ $counter=0;
     <div class="article-row-container row">
         <div class="col-md-1 article-buffer"></div>
         <div class="col-md-9 article-container">
-        <?php $sports_query = new WP_Query( array( 'posts_per_page' => '10', 'category_name' => 'sports', 'orderby' => 'date') ); ?>
+        <?php $sports_query = new WP_Query( array( 'posts_per_page' => '9', 'category_name' => 'sports', 'orderby' => 'date') ); ?>
         <?php if ( $sports_query->have_posts() ) : ?>
             <?php while ( $sports_query->have_posts() ) : $sports_query->the_post(); ?>
                   <?php if(($counter%3)==0){
@@ -38,7 +38,9 @@ $counter=0;
                             $start=false;?>
                 <?php endwhile; ?>
                 </div>
-                <?php posts_nav_link(); ?></p>
+                <div class="nav-link">
+                    <?php posts_nav_link(); ?>
+                </div>
             <?php else : ?>
                 <?php echo "there are no post that match this search"; ?>
                 <div class="searchlabel"><?php get_search_form();?>

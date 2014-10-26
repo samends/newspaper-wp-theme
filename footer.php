@@ -15,7 +15,12 @@
 					</nav>
 
 					<p class="attribution">&copy; <?php bloginfo('name'); ?></p>
-
+				<form class="header-search navbar-form navbar-left" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>	
 				</div> <!-- end #inner-footer -->
 
 			</footer> <!-- end footer -->

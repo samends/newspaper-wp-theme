@@ -16,7 +16,7 @@ $counter=0;
     <div class="article-row-container row">
         <div class="col-md-1 article-buffer"></div>
         <div class="col-md-9 article-container">
-        <?php $arts_query = new WP_Query( array( 'posts_per_page' => '10', 'category_name' => 'arts', 'orderby' => 'date') ); ?>
+        <?php $arts_query = new WP_Query( array( 'posts_per_page' => '', 'category_name' => 'arts', 'orderby' => 'date') ); ?>
         <?php if ( $arts_query->have_posts() ) : ?>
             <?php while ( $arts_query->have_posts() ) : $arts_query->the_post(); ?>
                   <?php if(($counter%3)==0){
@@ -37,8 +37,10 @@ $counter=0;
                       <?php $counter++;
                             $start=false;?>
                 <?php endwhile; ?>
+                <div class="nav-link">
+                    <?php posts_nav_link(); ?>
                 </div>
-                <?php posts_nav_link(); ?></p>
+                </div>
             <?php else : ?>
                 <?php echo "there are no post that match this search"; ?>
                 <div class="searchlabel"><?php get_search_form();?>
