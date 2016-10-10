@@ -1,1 +1,1 @@
-Wordpress theme for the daily campus
+Wordpress theme for a campus newspaper
